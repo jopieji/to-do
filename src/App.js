@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { HashRouter } from "react-router-dom";
+
 import './App.css';
 // header component
 import Header from "./head";
@@ -48,6 +50,7 @@ function App() {
   }
 
     return (
+      <HashRouter base="/">
       <div className="App">
         <Typography style={{ padding: 16 }} variant="h2">Todo List</Typography> 
         <TodoForm addTodo={addTodo} />
@@ -57,6 +60,7 @@ function App() {
           removeTodo={removeTodo} 
         />
       </div>
+      </HashRouter>
     );
 }
 
