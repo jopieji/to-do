@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Checkbox, IconButton, ListItem, Typography } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
+import UIfx from 'uifx';
+import mp3File from '../my-sounds/click1.mp3';
+
+const click = new UIfx(mp3File);
 
 function Todo({ todo, toggleComplete, removeTodo }) {
     
     function handleCheckboxClick() {
         toggleComplete(todo.id);
+        click.play(0.5);
     }
 
     function handleRemoveClick() {

@@ -37,8 +37,8 @@ function App() {
             ...todo,
             completed: !todo.completed
           };
-          return todo;
         }
+        return todo;
       })
     );
   }
