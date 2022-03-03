@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { HashRouter } from "react-router-dom";
 
 import './App.css';
-// header component
-import Header from "./head";
 // todo list component
 import TodoList from "./components/TodoList";
 // todo form component

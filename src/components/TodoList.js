@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Todo from "./Todo"
 import { List } from "@material-ui/core";
 
