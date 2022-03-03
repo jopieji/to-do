@@ -1,19 +1,61 @@
-import { render } from "@testing-library/react";
+import React, { useEffect, useState } from 'react';
+import './App.css';
 // header component
 import Header from "./head";
 // todo list component
-import TodoList from "./TodoList";
-import data from './data.json';
-import React, { useState } from 'react';
-import './App.css';
+import TodoList from "./components/TodoList";
+// todo form component
+import TodoForm from "./components/TodoForm";
 
+import Typography from "@material-ui/core/Typography";
+
+const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
 function App() {
-  const [ todoList, setTodoList ] = useState(data);
+  const [ todos, setTodos ] = useState([]);
+
+  useEffect(() => {
+    const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (storageTodos) {
+      setTodos(storageTodos);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
+
+  function addTodo(todo) {
+    setTodos([todo, ...todos]);
+  }
+
+  function toggleComplete(id) {
+    setTodos(
+      todos.map(todo => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          };
+          return todo;
+        }
+      })
+    );
+  }
+
+  function removeTodo(id) {
+    setTodos(todos.filter(todo => todo.id !== id));
+  }
+
     return (
       <div className="App">
-        <Header/>
-        <TodoList todoList={todoList}/>
+        <Typography style={{ padding: 16 }} variant="h2">Todo List</Typography> 
+        <TodoForm addTodo={addTodo} />
+        <TodoList 
+          todos={todos} 
+          toggleComplete={toggleComplete} 
+          removeTodo={removeTodo} 
+        />
       </div>
     );
 }

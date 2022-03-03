@@ -1,9 +1,29 @@
 .App {
     text-align: center;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 30px;
+    padding: 30%;
+}
+
+.body, html, #root {
+    height: 100%;
+}
+
+.todo-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+li {
+    text-align: initial;
 }
 
 .spacer {
     padding-top: 10px;
 }
+
