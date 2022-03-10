@@ -3,7 +3,7 @@ import { Checkbox, IconButton, ListItem, Typography } from "@material-ui/core";
 import CloseIcon from "@material-ui/icons/Close";
 import UIfx from 'uifx';
 import mp3File from '../my-sounds/click1.mp3';
-import modClick from '../my-sounds/modernclick.wav';
+import modClick from '../my-sounds/modernclick.mp3';
 
 const click = new UIfx(mp3File);
 const modClick = new UIfx(modClick);
