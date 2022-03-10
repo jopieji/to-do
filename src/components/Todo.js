@@ -6,12 +6,12 @@ import mp3File from '../my-sounds/click1.mp3';
 import modClick from '../my-sounds/modernclick.mp3';
 
 const click = new UIfx(mp3File);
-const modClick = new UIfx(modClick);
+const click2 = new UIfx(modClick);
 
 function Todo({ todo, toggleComplete, removeTodo }) {
     
     function handleCheckboxClick() {
-        modClick.play(0.5);
+        click2.play(0.5);
         toggleComplete(todo.id);
     }
 
