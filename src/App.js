@@ -11,6 +11,12 @@ import Typography from "@material-ui/core/Typography";
 
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
+const d = new Date();
+
+const yr = d.getFullYear();
+const month = d.getMonth();
+const day = d.getDate();
+
 function App() {
   const [ todos, setTodos ] = useState([]);
 
@@ -50,7 +56,7 @@ function App() {
     return (
       <HashRouter base="/">
       <div className="App">
-        <Typography style={{ padding: 16 }} variant="h2">Todo List</Typography> 
+        <Typography style={{ padding: 16 }} variant="h2">{`${month}/${day}/${yr}`}</Typography> 
         <TodoForm addTodo={addTodo} />
         <TodoList 
           todos={todos} 
