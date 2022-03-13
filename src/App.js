@@ -56,7 +56,7 @@ function App() {
     return (
       <HashRouter base="/">
       <div className="App">
-        <Typography style={{ padding: 16 }} variant="h2">{`${month}/${day}/${yr}`}</Typography> 
+        <Typography style={{ padding: 16 }} variant="h4">{`Todos ${month + 1}/${day}/${yr}`}</Typography> 
         <TodoForm addTodo={addTodo} />
         <TodoList 
           todos={todos} 
