@@ -2,6 +2,11 @@
 ---
 
 This is a basic todo app to help my refresh my React skills and prep for an upcoming internship. I want to make sure I fully understand fundamentals before I get too deep into Hooks and whatnot, so I'm using this as my sandbox. Also, I make a todo list everyday, so hopefully I can make it my favorite todo app.
+---
+### Use it for Yourself!
+Check out the todo app at https://jopie-todo.netlify.app/
+
+Netflify was really easy to use, but it was just a static app that has no API calls. I might try and allow for login and cross-platform todo saving at a later date. We will see!
 
 ---
 ### Future Plans
