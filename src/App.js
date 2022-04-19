@@ -13,12 +13,18 @@ const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 
 const d = new Date();
 
-const yr = d.getFullYear();
-const month = d.getMonth();
-const day = d.getDate();
+function getDate() {
+  let yr = d.getFullYear();
+  let month = d.getMonth();
+  let day = d.getDate();
+  return `${month + 1}/${day}/${yr}`;
+}
+
+
 
 function App() {
   const [ todos, setTodos ] = useState([]);
+  const [ date, setDate ] = useState([]);
 
   useEffect(() => {
     const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -29,6 +35,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+    setDate(getDate());
   }, [todos]);
 
   function addTodo(todo) {
@@ -56,7 +63,7 @@ function App() {
     return (
       <HashRouter base="/">
       <div className="App">
-        <Typography style={{ padding: 16 }} variant="h4">{`Todos ${month + 1}/${day}/${yr}`}</Typography> 
+        <Typography style={{ padding: 16 }} variant="h4">{`Todos ${date}`}</Typography> 
         <TodoForm addTodo={addTodo} />
         <TodoList 
           todos={todos} 
