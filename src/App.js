@@ -30,6 +30,7 @@ function App() {
     const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (storageTodos) {
       setTodos(storageTodos);
+      setDate(getDate());
     }
   }, []);
 
@@ -40,6 +41,7 @@ function App() {
 
   function addTodo(todo) {
     setTodos([todo, ...todos]);
+    setDate(getDate());
   }
 
   function toggleComplete(id) {
@@ -58,6 +60,7 @@ function App() {
 
   function removeTodo(id) {
     setTodos(todos.filter(todo => todo.id !== id));
+    setDate(getDate());
   }
 
     return (
